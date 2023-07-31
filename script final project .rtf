@@ -1,0 +1,143 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red193\green193\blue193;\red25\green25\blue25;
+\red0\green0\blue0;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c80000\c80000\c80000;\cssrgb\c12941\c12941\c12941;
+\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 This script was in tomato 
+\f1\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 #!/bin/bash\
+#SBATCH --job-name=busco\
+#SBATCH --partition=hpc\
+#SBATCH --nodes=8\
+#SBATCH --ntasks-per-node=1\
+#SBATCH --mem=40g\
+#SBATCH --time=48:00:00\
+#SBATCH --output=/shared/
+\f0\fs22 \cf2 \CocoaLigature0 home/alymh12/outgroups/
+\f1\fs24 \cf0 \CocoaLigature1 OandE/%x.out\
+#SBATCH --error=/shared/
+\f0\fs22 \cf2 \CocoaLigature0 home/alymh12/outgroups
+\f1\fs24 \cf0 \CocoaLigature1 /OandE/%x.err\
+\
+# These steps are required to activate Conda\
+source $HOME/.bash_profile\
+conda activate /shared
+\f0\fs22 \cf2 \CocoaLigature0 /home/alymh12/miniconda3/envs/busco1
+\f1\fs24 \cf0 \CocoaLigature1 \
+\
+# Run Busco\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 busco -m genome -i bufo_bufo.fasta -o \'93bufo_bufo_busco1\'94 --auto-lineage -c 8\
+busco -m genome -i Gavialis-gangeticus.fasta -o \'93Gavialis-gangeticus_busco1\'94 --auto-lineage -c 8\
+busco -m genome -i human.fasta -o \'93human_busco1\'94 --auto-lineage -c 8\
+busco -m genome -i leatherback_sea.fasta -o \'93leatherback_sea_busco1\'94 --auto-lineage -c 8\
+busco -m genome -i Nanorana-parkeri.fasta -o \'93Nanorana-parkeri_busco1\'94 --auto-lineage -c 8\
+busco -m genome -i platypus.fasta -o \'93platypus_busco1\'94 --auto-lineage -c 8
+\f2\fs32 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 nohup ./busco1.sh &\cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+\
+\
+\
+\
+This script was in Augusta\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+#!/bin/bash\
+#SBATCH --job-name=busco\
+#SBATCH --partition=defq\
+#SBATCH --nodes=8\
+#SBATCH --ntasks-per-node=1\
+#SBATCH --mem=30g\
+#SBATCH --time=48:00:00\
+#SBATCH --output=/gpfs01/home/alymh12/neweaves/OandE/%x.out\
+#SBATCH --error=/gpfs01/home/alymh12/neweaves/OandE/%x.err\
+\
+# These steps are required to activate Conda\
+source $HOME/.bash_profile\
+conda activate /gpfs01/home/alymh12/miniconda3/envs/busco\
+\
+# Run busco\
+busco -m genome -i "Acanthisitta-chloris(rifleman).fasta" -o "Acanthisitta-chloris(rifleman)_busco" -l aves_odb10\
+busco -m genome -i "Apteryx-rowi(okarito-brown-kiwi)1.fasta" -o "Apteryx-rowi(okarito-brown-kiwi)_busco" -l aves_odb10\
+busco -m genome -i "Balaeniceps-rex(shoebill)1.fasta" -o "Balaeniceps-rex(shoebill)_busco" -l aves_odb10\
+busco -m genome -i "Cariama-cristata(red-legged-seriema)1.fasta" -o "Cariama-cristata(red-legged-seriema)_busco" -l aves_odb10\
+busco -m genome -i "Casuarius-casuarius(southern cassowary)1.fasta" -o "Casuarius-casuarius(southern cassowary)_busco" -l aves_odb10\
+busco -m genome -i "Chauna-torquata(southern screamer)1.fasta" -o "Chauna-torquata(southern screamer)_busco" -l aves_odb10\
+busco -m genome -i "Falco peregrinus.fasta" -o "Falco peregrinus_busco" -l aves_odb10\
+busco -m genome -i "Falcon-cherrug.fasta" -o "Falcon-cherrug_busco" -l aves_odb10\
+busco -m genome -i "Gallus-gallus(chicken)1.fasta" -o "Gallus-gallus(chicken)_busco" -l aves_odb10\
+busco -m genome -i "Gavia stellata1.fasta" -o "Gavia stellata1_busco" -l aves_odb10\
+busco -m genome -i "Meleagris-gallopavo(turkey)1.fasta" -o "Meleagris-gallopavo(turkey)_busco" -l aves_odb10\
+busco -m genome -i "Melopsittacus-undulatus1.fasta" -o "Melopsittacus-undulatus1_busco" -l aves_odb10\
+busco -m genome -i "Opisthocomus-hoazin( hoazin )1.fasta" -o "Opisthocomus-hoazin( hoazin )_busco" -l aves_odb10\
+busco -m genome -i "Serinus canaria(common_canary)1.fasta" -o "Serinus canaria(common_canary)_busco" -l aves_odb10\
+busco -m genome -i "Tetraoninae(grouses)1.fasta" -o "Tetraoninae(grouses)_busco" -l aves_odb10\
+busco -m genome -i "Zebra-finch1.fasta" -o "Zebra-finch1_busco" -l aves_odb10\
+busco -m genome -i "Zonotrichia-albicollis(white_throated sparrow)1.fasta" -o "Zonotrichia-albicollis(white_throated sparrow)_busco" -l aves_odb10\
+busco -m genome -i "cygnus_olor(Mute-swan)1.fasta" -o "cygnus_olor(Mute-swan)_busco" -l aves_odb10\
+busco -m genome -i "dromaiidae-emus.fasta" -o "dromaiidae-emus_busco" -l aves_odb10\
+busco -m genome -i "japanese-quail(japanese_quail)1.fasta" -o "japanese-quail(japanese_quail)_busco" -l aves_odb10\
+busco -m genome -i "struthio_camelus( African ostrich)1.fasta" -o "struthio_camelus( African ostrich)_busco" -l aves_odb10\
+busco -m genome -i "Coturnix japonica.fasta" -o "Coturnix japonica_busco" -l aves_odb10\
+busco -m genome -i "Tyto_alba.fasta" -o "Tyto_alba_busco" -l aves_odb10\
+\pard\pardeftab720\partightenfactor0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+#!/bin/bash\
+#SBATCH --job-name=ortho\
+#SBATCH --partition=defq\
+#SBATCH --nodes=8\
+#SBATCH --ntasks-per-node=1\
+#SBATCH --mem=30g\
+#SBATCH --time=48:00:00\
+#SBATCH --output=/gpfs01/home/alymh12/orthofinderA/OandE/%x.out\
+#SBATCH --error=/gpfs01/home/alymh12/orthofinderA/OandE/%x.err\
+\
+# These steps are required to activate Conda\
+source $HOME/.bash_profile\
+conda activate /gpfs01/home/alymh12/miniconda3/envs/ortho\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 orthofinder -f 
+\f0\fs22 \cf2 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 /gpfs01/home/alymh12/orthofinderA
+\f2\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\CocoaLigature1  -t 8 -S 21 -M 21 -o ortho_output
+\f0\fs22 \cf2 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+/gpfs01/home/alymh12/miniconda3/envs/ortho\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
