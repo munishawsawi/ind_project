@@ -1,0 +1,3 @@
+conda install -c conda-forge -c bioconda busco=5.4.7
+
+conda install -c bioconda orthofinder
