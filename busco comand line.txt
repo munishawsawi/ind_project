@@ -1,0 +1,1 @@
+busco -m genome -i Zebra.copy.fasta -o Zebra_busco -l aves_odb10
