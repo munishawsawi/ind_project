@@ -1,0 +1,48 @@
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/__main__.py", line 1742, in main
+    files.InitialiseFileHandler(options, fastaDir, continuationDir, resultsDir_nonDefault, pickleDir_nonDefault)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/__main__.py", line 1742, in main
+    files.InitialiseFileHandler(options, fastaDir, continuationDir, resultsDir_nonDefault, pickleDir_nonDefault)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 849, in InitialiseFileHandler
+    FileHandler.CreateOutputDirectories(options, pfl, base_dir, fastaDir)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 849, in InitialiseFileHandler
+    FileHandler.CreateOutputDirectories(options, pfl, base_dir, fastaDir)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 163, in CreateOutputDirectories
+    self.CreateOutputDirFromStart_new(fastaDir, base_dir, user_name=options.name)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 89, in CreateOutputDirFromStart_new
+    self.rd1 = util.CreateNewWorkingDirectory(base + "Results_")
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/util.py", line 79, in CreateNewWorkingDirectory
+    os.mkdir(newDirectoryName)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 163, in CreateOutputDirectories
+    self.CreateOutputDirFromStart_new(fastaDir, base_dir, user_name=options.name)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 89, in CreateOutputDirFromStart_new
+    self.rd1 = util.CreateNewWorkingDirectory(base + "Results_")
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/util.py", line 79, in CreateNewWorkingDirectory
+    os.mkdir(newDirectoryName)
+Traceback (most recent call last):
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/orthofinder", line 7, in <module>
+    main(args)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/__main__.py", line 1742, in main
+Traceback (most recent call last):
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/orthofinder", line 7, in <module>
+    main(args)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/__main__.py", line 1742, in main
+    files.InitialiseFileHandler(options, fastaDir, continuationDir, resultsDir_nonDefault, pickleDir_nonDefault)     
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 849, in InitialiseFileHandler
+    files.InitialiseFileHandler(options, fastaDir, continuationDir, resultsDir_nonDefault, pickleDir_nonDefault)     
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 849, in InitialiseFileHandler
+    FileHandler.CreateOutputDirectories(options, pfl, base_dir, fastaDir)    
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 163, in CreateOutputDirectories
+    self.CreateOutputDirFromStart_new(fastaDir, base_dir, user_name=options.name)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 89, in CreateOutputDirFromStart_new
+    FileHandler.CreateOutputDirectories(options, pfl, base_dir, fastaDir)    
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 163, in CreateOutputDirectories
+    self.rd1 = util.CreateNewWorkingDirectory(base + "Results_")
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/util.py", line 79, in CreateNewWorkingDirectory
+    self.CreateOutputDirFromStart_new(fastaDir, base_dir, user_name=options.name)
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/files.py", line 89, in CreateOutputDirFromStart_new
+    os.mkdir(newDirectoryName)
+FileExistsError: [Errno 17] File exists: '/gpfs01/home/alymh12/orthofinderA/OrthoFinder/Results_Jul25/'
+    self.rd1 = util.CreateNewWorkingDirectory(base + "Results_")
+  File "/gpfs01/home/alymh12/miniconda3/envs/ortho/bin/scripts_of/util.py", line 79, in CreateNewWorkingDirectory
+    os.mkdir(newDirectoryName)
+FileExistsError: [Errno 17] File exists: '/gpfs01/home/alymh12/orthofinderA/OrthoFinder/Results_Jul25/'
